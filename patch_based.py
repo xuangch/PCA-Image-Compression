@@ -39,7 +39,7 @@ for n_components in np.logspace(2, 6, 5, endpoint=True, base=2):
             new_img[i*patch_h:(i+1)*patch_h, j*patch_w:(j+1)*patch_w] = np.reshape(new_data[i * num_w + j], (patch_h, patch_w))
 
     info_percentage.append(np.sum(pca.explained_variance_ratio_))
-    # cv2.imwrite(os.path.join(root, 'n_{}.png'.format(int(n_components)), new_img * 255)
+    # cv2.imwrite(os.path.join(root, 'n_{}.png'.format(int(n_components))), new_img * 255)
     cv2.imshow('n={}'.format(int(n_components)), new_img)
     cv2.waitKey()
 

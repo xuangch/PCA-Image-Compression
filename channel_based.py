@@ -35,6 +35,6 @@ low_data = pca.fit_transform(data)
 new_data = pca.inverse_transform(low_data)      # (n_samples, n_features)
 new_img = np.reshape(new_data.T, (channel, h, w))
 for i in range(channel):
-    # cv2.imwrite(os.path.join(root, 'channel_results/component_{}.png'.format(i + 1)), new_img[i, :, :] * 255)
+    # cv2.imwrite(os.path.join(root, 'channel_{}.png'.format(i + 1)), new_img[i, :, :] * 255)
     cv2.imshow('channel_{}'.format(i+1), new_img[i, :, :])
     cv2.waitKey()
