@@ -34,6 +34,7 @@ data = np.reshape(img, (channel, h * w)).T          # (n_samples, n_features)
 # all component figures
 pca = PCA(channel)
 components = np.reshape(pca.fit_transform(data).T, (channel, h, w))
+print(pca.explained_variance_ratio_)
 slr = MinMaxScaler()
 for i in range(channel):
     comp = slr.fit_transform(components[i, :, :])
